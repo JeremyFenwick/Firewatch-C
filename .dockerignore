@@ -1,0 +1,22 @@
+# flyctl launch added from .gitignore
+**/bin
+**/obj
+packages
+**/riderModule.iml
+_ReSharper.Caches
+
+# flyctl launch added from .idea/.idea.Firewatch-C/.idea/.gitignore
+.idea/.idea.Firewatch-C/.idea/**/﻿# Default ignored files
+.idea/.idea.Firewatch-C/.idea/shelf
+.idea/.idea.Firewatch-C/.idea/workspace.xml
+# Rider ignored files
+.idea/.idea.Firewatch-C/.idea/contentModel.xml
+.idea/.idea.Firewatch-C/.idea/modules.xml
+.idea/.idea.Firewatch-C/.idea/projectSettingsUpdater.xml
+.idea/.idea.Firewatch-C/.idea/.idea.Firewatch-C.iml
+# Editor-based HTTP Client requests
+.idea/.idea.Firewatch-C/.idea/httpRequests
+# Datasource local storage ignored files
+.idea/.idea.Firewatch-C/.idea/dataSources
+.idea/.idea.Firewatch-C/.idea/dataSources.local.xml
+fly.toml

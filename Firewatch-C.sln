@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firewatch.Core", "Firewatch.Core\Firewatch.Core.csproj", "{71D03FC3-5B17-42C6-A0ED-6AF05610F1F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firewatch.Campfires", "Firewatch.Campfires\Firewatch.Campfires.csproj", "{EFA2C5DE-B7E7-4B06-9C54-6696504DA818}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71D03FC3-5B17-42C6-A0ED-6AF05610F1F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D03FC3-5B17-42C6-A0ED-6AF05610F1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D03FC3-5B17-42C6-A0ED-6AF05610F1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D03FC3-5B17-42C6-A0ED-6AF05610F1F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA2C5DE-B7E7-4B06-9C54-6696504DA818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA2C5DE-B7E7-4B06-9C54-6696504DA818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA2C5DE-B7E7-4B06-9C54-6696504DA818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA2C5DE-B7E7-4B06-9C54-6696504DA818}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

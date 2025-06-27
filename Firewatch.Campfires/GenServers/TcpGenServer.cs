@@ -3,13 +3,13 @@ using System.Net.Sockets;
 
 namespace Firewatch.Campfires.GenServers;
 
-public abstract class TcpGenServer(int port, IPAddress address, string serverName)
+public abstract class TcpGenServer(int port, IPAddress address, string serverName) : GenServer
 {
     private string ServerName { get; } = serverName;
     private bool _isRunning = false;
     private readonly TcpListener _listener = new(address, port);
 
-    public async Task StartAsync()
+    public override async Task StartAsync()
     {
         _listener.Start();
         _isRunning = true;
@@ -30,7 +30,7 @@ public abstract class TcpGenServer(int port, IPAddress address, string serverNam
         }
     }
 
-    public void Stop()
+    public override void Stop()
     {
         _isRunning = true;
         _listener.Stop();

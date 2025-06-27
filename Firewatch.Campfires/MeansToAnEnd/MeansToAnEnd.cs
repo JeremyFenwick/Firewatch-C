@@ -7,7 +7,7 @@ namespace Firewatch.Campfires.MeansToAnEnd;
 
 public class MeansToAnEnd(int port, IPAddress address) : TcpGenServer(port, address, "Means to an end")
 {
-    private abstract record Request;
+    private abstract record Request {}
     private sealed record Insert(int Timestamp, int Price) : Request;
     private sealed record Query(int MinTime, int MaxTime) : Request;
 

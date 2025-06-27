@@ -4,6 +4,7 @@ using Firewatch.Campfires.GenServers;
 using Firewatch.Campfires.MeansToAnEnd;
 using Firewatch.Campfires.PrimeTime;
 using Firewatch.Campfires.SmokeTest;
+using Firewatch.Campfires.UnusualDatabase;
 
 namespace Firewatch;
 
@@ -13,32 +14,21 @@ class Program
     {
         try
         {
-            // Ensure the CAMPFIRE environment variable is set
             var campfire = Environment.GetEnvironmentVariable("CAMPFIRE");
-            if (string.IsNullOrEmpty(campfire))
+            var tcpPort = int.Parse(Environment.GetEnvironmentVariable("CF_PORT"));
+            var udpPort = int.Parse(Environment.GetEnvironmentVariable("CF_UDP_PORT"));
+            
+            // Set the campfire server based on the environment variables
+            GenServer server = campfire.ToLower() switch
             {
-                throw new InvalidOperationException("CAMPFIRE environment variable is not set.");
-            }
-            // Ensure the CF_PORT environment variable is set
-            var portString = Environment.GetEnvironmentVariable("CF_PORT");
-            if (string.IsNullOrEmpty(portString))
-            {
-                throw new InvalidOperationException("CF_PORT environment variable is not set.");
-            }
-            var portNumber = int.Parse(portString);
-            if (portNumber is <= 1000 or > 65535)
-            {
-                throw new NotSupportedException("CF_PORT must be a valid port number between 1000 and 65535.");
-            }
-            // Start the campfire server based on the environment variables
-            TcpGenServer server = campfire.ToLower() switch
-            {
-                "smoketest" => new SmokeTest(portNumber, IPAddress.Any) { },
-                "primetime" => new PrimeTime(portNumber, IPAddress.Any) { },
-                "meanstoanend" => new MeansToAnEnd(portNumber, IPAddress.Any) { },
-                "budgetchat" => new BudgetChat(portNumber, IPAddress.Any) { },
+                "smoketest" => new SmokeTest(tcpPort, IPAddress.Any) { },
+                "primetime" => new PrimeTime(tcpPort, IPAddress.Any) { },
+                "meanstoanend" => new MeansToAnEnd(tcpPort, IPAddress.Any) { },
+                "budgetchat" => new BudgetChat(tcpPort, IPAddress.Any) { },
+                "unusualdatabase" => new UnusualDatabase(udpPort) { },
                 _ => throw new ArgumentOutOfRangeException()
             };
+            // Start the server
             await server.StartAsync();
         } catch (Exception ex)
         {

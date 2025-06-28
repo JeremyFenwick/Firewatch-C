@@ -2,6 +2,7 @@
 using Firewatch.Campfires.BudgetChat;
 using Firewatch.Campfires.GenServers;
 using Firewatch.Campfires.MeansToAnEnd;
+using Firewatch.Campfires.MobInTheMiddle;
 using Firewatch.Campfires.PrimeTime;
 using Firewatch.Campfires.SmokeTest;
 using Firewatch.Campfires.UnusualDatabase;
@@ -26,6 +27,7 @@ class Program
                 "meanstoanend" => new MeansToAnEnd(tcpPort, IPAddress.Any) { },
                 "budgetchat" => new BudgetChat(tcpPort, IPAddress.Any) { },
                 "unusualdatabase" => new UnusualDatabase(udpPort) { },
+                "mobinthemiddle" => new MobInTheMiddle(tcpPort, IPAddress.Any) { },
                 _ => throw new ArgumentOutOfRangeException()
             };
             // Start the server

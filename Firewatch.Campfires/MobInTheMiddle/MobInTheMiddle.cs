@@ -6,7 +6,7 @@ using Firewatch.Campfires.GenServers;
 
 namespace Firewatch.Campfires.MobInTheMiddle;
 
-public class MobInTheMiddle(int port, IPAddress address) : TcpGenServer(port, address, "Mob in the Middle")
+public sealed class MobInTheMiddle(int port, IPAddress address) : TcpGenServer(port, address, "Mob in the Middle")
 {
     private const string TonyAddress = "7YWHMfk9JZe0LM0g1ZauHuiSxhI";
     private const string UpstreamServer = "chat.protohackers.com";

@@ -6,7 +6,7 @@ using Firewatch.Campfires.GenServers;
 
 namespace Firewatch.Campfires.UnusualDatabase;
 
-public class UnusualDatabase : UdpGenServer
+public sealed class UnusualDatabase : UdpGenServer
 {
     private ConcurrentDictionary<string, string> _dataStore;
 

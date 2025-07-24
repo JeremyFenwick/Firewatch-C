@@ -6,7 +6,7 @@ using Firewatch.Campfires.GenServers;
 
 namespace Firewatch.Campfires.PrimeTime;
 
-public class PrimeTime(int port, IPAddress address) : TcpGenServer(port, address, "Primetime")
+public sealed class PrimeTime(int port, IPAddress address) : TcpGenServer(port, address, "Primetime")
 {
     private record Response(string method, bool prime);
     

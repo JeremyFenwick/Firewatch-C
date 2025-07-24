@@ -8,6 +8,7 @@ public abstract class TcpGenServer(int port, IPAddress address, string serverNam
     private string ServerName { get; } = serverName;
     private bool _isRunning = false;
     private readonly TcpListener _listener = new(address, port);
+    public IPEndPoint EndPoint => (IPEndPoint)_listener.LocalEndpoint;
 
     public override async Task StartAsync()
     {
@@ -32,7 +33,7 @@ public abstract class TcpGenServer(int port, IPAddress address, string serverNam
 
     public override void Stop()
     {
-        _isRunning = true;
+        _isRunning = false;
         _listener.Stop();
         Console.WriteLine($"Server {ServerName} stopped.");
     }
